@@ -7,16 +7,15 @@ const mongoose = require('mongoose');
 const session = require('express-session');
 const cors = require('cors');
 const Store = require('connect-mongo')(session);
-const config = require('../../Bot/config.json');
 const { graphqlHTTP } = require('express-graphql');
 const RootSchema = require('./graphql')
-const { backendDomain } = require('./config.json')
+const { backendDomain, mongoUri } = require('./config.json')
 
 const app = express();
 const PORT = process.env.PORT || 3002;
 const routes = require('./routes');
 
-mongoose.connect(config.mongoUri, {
+mongoose.connect(mongoUri, {
     poolSize: 2,
     promiseLibrary: global.Promise,
     useNewUrlParser: true,

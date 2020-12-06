@@ -1,4 +1,5 @@
 {
     "backendDomain": "https://italianhubot-dashboard-backend.herokuapp.com",
-    "frontendDomain": "https://italianhubot-dashboard.herokuapp.com"
+    "frontendDomain": "https://italianhubot-dashboard.herokuapp.com",
+    "mongoUri": "mongodb://127.0.0.1:27017/ItalianHUBot"
 }
