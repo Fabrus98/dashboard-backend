@@ -1,11 +1,11 @@
 const router = require('express').Router();
 const passport = require('passport');
-const { domain } = require('../config.json')
+const { frontendDomain } = require('../config.json')
 
 router.get('/discord', passport.authenticate('discord'));
 
 router.get('/discord/redirect', passport.authenticate('discord'), (req, res) => {
-    res.redirect( domain + '/menu');
+    res.redirect( frontendDomain + '/menu');
 });
 
 router.get('/', (req, res) => {

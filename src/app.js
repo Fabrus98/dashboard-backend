@@ -10,7 +10,7 @@ const Store = require('connect-mongo')(session);
 const config = require('../../Bot/config.json');
 const { graphqlHTTP } = require('express-graphql');
 const RootSchema = require('./graphql')
-const { domain } = require('./config.json')
+const { backendDomain } = require('./config.json')
 
 const app = express();
 const PORT = process.env.PORT || 3002;
@@ -29,7 +29,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 app.use( cors( {
-    origin: [ domain ],
+    origin: [ "https://italianhubot-dashboard-backend.herokuapp.com" ],
     credentials: true,
 }))
 

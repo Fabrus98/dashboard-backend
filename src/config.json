@@ -1,3 +1,4 @@
 {
-    "domain": "https://italianhubot-dashboard-backend.herokuapp.com/"
+    "backendDomain": "https://italianhubot-dashboard-backend.herokuapp.com",
+    "frontendDomain": "https://italianhubot-dashboard.herokuapp.com"
 }
