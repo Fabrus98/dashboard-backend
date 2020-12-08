@@ -12,7 +12,7 @@ const RootSchema = require('./graphql')
 const { backendDomain, mongoUri } = require('./config.json')
 
 const app = express();
-const PORT = process.env.PORT || 3002;
+const PORT = process.env.PORT;
 const routes = require('./routes');
 
 mongoose.connect(mongoUri, {
