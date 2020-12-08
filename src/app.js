@@ -28,7 +28,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 app.use( cors( {
-    origin: [ "https://italianhubot-dashboard.herokuapp.com/" ],
+    origin: [ "https://italianhubot-dashboard.herokuapp.com:3000" ],
     credentials: true,
 }))
 
