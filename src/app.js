@@ -28,7 +28,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 app.use( cors( {
-    origin: [ "https://italianhubot-dashboard-backend.herokuapp.com" ],
+    origin: [ "https://italianhubot-dashboard-backend.herokuapp.com:4000" ],
     credentials: true,
 }))
 
@@ -51,4 +51,9 @@ app.use('/graphql', graphqlHTTP({
 
 app.use('/api', routes);
 
-app.listen(PORT, () => console.log(`Girando sulla porta ${PORT}`));
+//app.listen(PORT, () => console.log(`Girando sulla porta ${PORT}`));
+
+var server = app.listen(PORT || 8080, function () {
+    var port = server.address().port;
+    console.log("Girando sulla porta: ", port);
+  });
