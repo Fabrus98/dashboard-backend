@@ -12,7 +12,7 @@ const RootSchema = require('./graphql')
 const { backendDomain, mongoUri } = require('./config.json')
 
 const app = express();
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 3001;
 const routes = require('./routes');
 
 mongoose.connect(mongoUri, {
@@ -28,7 +28,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 app.use( cors( {
-    origin: [ "https://italianhubot-dashboard-backend.herokuapp.com:4000" ],
+    origin: [ "https://italianhubot-dashboard.herokuapp.com" ],
     credentials: true,
 }))
 
@@ -53,7 +53,7 @@ app.use('/api', routes);
 
 //app.listen(PORT, () => console.log(`Girando sulla porta ${PORT}`));
 
-var server = app.listen(PORT || 8080, function () {
+var server = app.listen(PORT, function () {
     var port = server.address().port;
     console.log("Girando sulla porta: ", port);
   });
