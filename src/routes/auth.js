@@ -6,7 +6,7 @@ router.get('/discord', passport.authenticate('discord'));
 
 router.get('/discord/redirect', passport.authenticate('discord'), (req, res) => {
     //res.redirect( frontendDomain + '/menu');
-    res.redirect( 'https://italianhubot-dashboard.herokuapp.com:3001');
+    res.redirect( 'https://italianhubot.it:2053/menu');
 });
 
 router.get('/', (req, res) => {

@@ -12,7 +12,7 @@ const RootSchema = require('./graphql')
 const { backendDomain, mongoUri } = require('./config.json')
 
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT;
 const routes = require('./routes');
 
 mongoose.connect(mongoUri, {
@@ -28,7 +28,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 app.use( cors( {
-    origin: [ "https://italianhubot-dashboard.herokuapp.com" ],
+    origin: [ "https://italianhubot.it" ],
     credentials: true,
 }))
 
